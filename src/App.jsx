@@ -1,26 +1,36 @@
-import { Route, Routes } from 'react-router-dom';
-import SharedLayout from 'components/SharedLayout/SharedLayout';
-import FirstPage from 'pages/FirstPage/FirstPage';
-import SecondPage from 'pages/SecondPage/SecondPage';
-import HalfPage from 'pages/HalfPage/HalfPage';
-import ErrorPage from 'pages/ErrorPage/ErrorPage';
+import React, { useEffect } from 'react';
+
+import { lazy, Suspense } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import SharedLayout from './components/SharedLayout/SharedLayout';
+import { Loader } from './components/Loader/Loader';
+import { useDispatch } from 'react-redux';
+import { fetchCars } from './redux/cars/cars.operations';
 import { AppWrapper } from './App.styled';
 
-const test = import.meta.env.VITE_API_TEST;
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const CatalogPage = lazy(() => import('./pages/CatalogPage/CatalogPage'));
+const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
 
 function App() {
-  console.log(test);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log('App component mounted');
+    dispatch(fetchCars());
+  }, [dispatch]);
   return (
     <AppWrapper>
-      <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route path="/first" element={<FirstPage />} />
-          <Route path="/second" element={<SecondPage />}>
-            <Route path=":half" element={<HalfPage />} />
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/catalog" element={<CatalogPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Route>
-          <Route path="*" element={<ErrorPage />} />
-        </Route>
-      </Routes>
+        </Routes>
+      </Suspense>
     </AppWrapper>
   );
 }
