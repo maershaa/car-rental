@@ -31,8 +31,8 @@ export const StyledLink = styled(NavLink)`
   &.active,
   &:hover,
   &:focus {
-    background-color: var( --navLink-hover);
-    border: 1px solid var( --navLink-hover);
+    background-color: #9cc33c;
+    border: 1px solid #9cc33c;
     color: white;
   }
 
