@@ -266,8 +266,8 @@ Valid keys: `+JSON.stringify(Object.keys(I),null,"  "));var Be=$(X,re,G,te,Z+"."
   &.active,
   &:hover,
   &:focus {
-    background-color: var( --navLink-hover);
-    border: 1px solid var( --navLink-hover);
+    background-color: #9cc33c;
+    border: 1px solid #9cc33c;
     color: white;
   }
 
@@ -509,4 +509,4 @@ to {
     background-repeat: no-repeat;
     background-position: top 343px right;
     background-clip: content-box;
-`,P_=b.lazy(()=>_f(()=>import("./HomePage-be06c85c.js"),["assets/HomePage-be06c85c.js","assets/cars.selectors-7fbfb125.js"])),O_=b.lazy(()=>_f(()=>import("./CatalogPage-4964734d.js"),[])),T_=b.lazy(()=>_f(()=>import("./FavoritesPage-0f3c192c.js"),["assets/FavoritesPage-0f3c192c.js","assets/cars.selectors-7fbfb125.js"]));function I_(){const e=e1();return b.useEffect(()=>{console.log("App component mounted"),e(pm())},[e]),P.jsx(R_,{children:P.jsx(b.Suspense,{fallback:P.jsx(Yg,{}),children:P.jsx(x0,{children:P.jsxs(cr,{path:"/",element:P.jsx(CC,{}),children:[P.jsx(cr,{index:!0,element:P.jsx(P_,{})}),P.jsx(cr,{path:"/catalog",element:P.jsx(O_,{})}),P.jsx(cr,{path:"/favorites",element:P.jsx(T_,{})}),P.jsx(cr,{path:"*",element:P.jsx(v0,{to:"/"})})]})})})})}Ka.createRoot(document.getElementById("root")).render(P.jsx(J.StrictMode,{children:P.jsxs(J0,{store:hm,children:[P.jsx(mm,{persistor:xx,loading:null,children:P.jsx(R0,{basename:"car-rental",children:P.jsx(I_,{})})}),P.jsx(hx,{})]})}));export{Yg as L,e1 as a,j_ as b,pm as f,b_ as i,P as j,b as r,H as u};
+`,P_=b.lazy(()=>_f(()=>import("./HomePage-39b29e10.js"),["assets/HomePage-39b29e10.js","assets/cars.selectors-7fbfb125.js"])),O_=b.lazy(()=>_f(()=>import("./CatalogPage-d1eb6b69.js"),[])),T_=b.lazy(()=>_f(()=>import("./FavoritesPage-220a58a0.js"),["assets/FavoritesPage-220a58a0.js","assets/cars.selectors-7fbfb125.js"]));function I_(){const e=e1();return b.useEffect(()=>{console.log("App component mounted"),e(pm())},[e]),P.jsx(R_,{children:P.jsx(b.Suspense,{fallback:P.jsx(Yg,{}),children:P.jsx(x0,{children:P.jsxs(cr,{path:"/",element:P.jsx(CC,{}),children:[P.jsx(cr,{index:!0,element:P.jsx(P_,{})}),P.jsx(cr,{path:"/catalog",element:P.jsx(O_,{})}),P.jsx(cr,{path:"/favorites",element:P.jsx(T_,{})}),P.jsx(cr,{path:"*",element:P.jsx(v0,{to:"/"})})]})})})})}Ka.createRoot(document.getElementById("root")).render(P.jsx(J.StrictMode,{children:P.jsxs(J0,{store:hm,children:[P.jsx(mm,{persistor:xx,loading:null,children:P.jsx(R0,{basename:"car-rental",children:P.jsx(I_,{})})}),P.jsx(hx,{})]})}));export{Yg as L,e1 as a,j_ as b,pm as f,b_ as i,P as j,b as r,H as u};
