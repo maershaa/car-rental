@@ -1,5 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { StyledCarsListItem } from "./StyledCarsListItem";
+import LearnMoreBtn from '../LearnMoreBtn/LearnMoreBtn'
+import LearnMoreModal from '../LearnMoreModal/LearnMoreModal'
+
 
 // Функция форматирования адреса
 const formatAddress = (address) => {
@@ -22,14 +25,24 @@ const CarsListItem = ({
   rentalCompany,
   address,
   type,
+  description,
+  accessories
 }) => {
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
   return (
     <StyledCarsListItem>
       <img src={img} alt={`${brand} ${model}`} className="custom-image" />
 
       <div className="carDetails">
         <p className="details">
-          {brand} <span className="model">{model},</span> {year}
+          {brand}{" "}
+           <span className="model">{model},{" "}</span> 
+           {year}
         </p>
         <p className="cost">{cost}</p>
       </div>
@@ -38,9 +51,30 @@ const CarsListItem = ({
         {formatAddress(address)} | {rentalCompany} | {type} | {model} | {id} |{" "}
         {functionalities[0]}
       </p>
-      <a href="https://www.youtube.com/watch?v=XQHu4UUc9-A&list=PLViULGko0FdhZ99yYnqB64F_4nVyvOPH5&index=8" target="_blank" rel="noopener noreferrer" className="LearnMoreLink">
-        Learn More
-      </a>
+
+      <LearnMoreBtn handleOpen={handleOpen}  />
+
+<LearnMoreModal 
+open={open} 
+handleClose={handleClose}
+id={id}
+img={img}
+brand={brand}
+model={model}
+year={year}
+cost={cost}
+functionalities={functionalities}
+rentalCompany={rentalCompany}
+address={address}
+type={type}
+
+
+description={description}
+accessories={accessories}
+
+
+/>
+
     </StyledCarsListItem>
   );
 };
